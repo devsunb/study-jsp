@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Animated Filter</title>
+		<style type="text/css">
+			div {
+				background: red;
+				border: 1px solid blue;
+				width: 70px;
+				height: 70px;
+				margin: 0 3px;
+				float: left;
+			}
+			
+			.width {
+				width: 40px;
+			}
+		</style>
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("#run").click(function() {
+					$(":animated").toggleClass("width");
+				});
+				function animateIt() {
+					$("#ani").slideToggle("slow", animateIt);
+				}
+				animateIt();
+			});
+		</script>
+	</head>
+	<body>
+		<button id="run">Run</button>
+		<div></div>
+		<div id="ani"></div>
+		<div></div>
+	</body>
+</html>
